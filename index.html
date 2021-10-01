@@ -1,0 +1,363 @@
+<html>
+
+<head>
+    <title>Dynamo Fitness | Personal trainer in Pflugerville Texas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,900i" rel="stylesheet">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/styles.css" />
+    <meta property="og:image" content="http://www.dynamofitnesstx.com/keri.jpg" />
+    <meta property="og:description" content="Dynamo Fitness is a private fitness gym in Pflugerville, Texas. It is operated by Keri Klumker, certified Personal Trainer, Corrective Exercise Specialist and Fitness Nutrition Specialist." />
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#submit').click(function (e) {
+                e.preventDefault();
+
+                var name = $("#name").val(),
+                    email = $("#email").val(),
+                    phone = $("#phone").val(),
+                    message = $("#message").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: 'https://65xg4y0tt3.execute-api.us-east-1.amazonaws.com/default/contactFormFunction',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        'name': name,
+                        'email': email,
+                        'message': message,
+                        'phone': phone,
+                    }),
+                    success: function (res) {
+                        $('#contactform').hide();
+                        $('#form-response-success').show();
+                    },
+                    error: function () {
+                        $('#form-response-error').hide();
+                    }
+                });
+
+            });
+
+            $('body').scrollspy({
+                target: ".navbar",
+                offset: 60
+            });
+
+            var scroll = function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+
+                } // End if
+
+                $('.navbar-collapse').collapse('hide');
+
+            };
+            // Add smooth scrolling on all links inside the navbar
+            $(".navbar a").on('click', scroll);
+            $(".card a").on('click', scroll);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src =
+                'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=1308772179236607&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div id="top" class="anchor">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#top">
+                    <img src="/dynamologo.svg" alt="Dynamo Fitness Logo" width="56px" height="30px" class="d-inline-block align-top" /> Dynamo Fitness
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#top">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#trainer">Meet Your Trainer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#facility">Facility</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#rates">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="#reviews">Reviews</a>
+                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4 rounded">Be a Dynamo</h1>
+                <!--<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
+            </div>
+        </div>
+
+        <div class="container-fluid bg-dark pt-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-9 text-center">
+                    <h1 class="display-4">What is Dynamo Fitness?</h1>
+                    <p>Dynamo Fitness is a private fitness gym in Pflugerville, Texas. It is operated by Keri Klumker, certified Personal Trainer, Corrective Exercise Specialist and Fitness Nutrition Specialist. All workouts are specifically made for EACH client and held in a private gym
+                        and comfortable environment. Workouts are tailored to meet individual goals and preferences. Safety,
+                        proper form and achievable goals are the core of my training programs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container mt-5">
+
+        <div class="row mt-5 anchor justify-content-sm-center" id="trainer">
+            <div class="col-md-3">
+                <img src="/keri.jpg" class="rounded-circle img-fluid" />
+            </div>
+            <div class="col-md-8 offset-md-1 col-sm-12">
+                <h1 class="display-4 fancy dark">Meet your trainer</h1>
+                <p>My passion has always been helping people. I graduated nursing school with the thought of helping people
+                    get well. 10 years later I decided to go another route and help people stay out of the hospital altogether.
+                    I had always loved to workout, loved the feeling of bettering myself. I also fell in love with weight
+                    lifting. As I pursued my love for lifting, it became very clear that most women didn&rsquo;t know the
+                    benefits of lifting, were intimidated by it and the gym setting as well. It became my mission to teach
+                    both men, women and kids how to properly and safely lift weights. I now have a fully loaded garage gym,
+                    I am a certified Personal Trainer and I LOVE the time spent in my gym with my clients of all levels and
+                    ages. </p>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-5 anchor" id="facility">
+
+            <div class="col-md-7 col-sm-12">
+                <h1 class="display-4 fancy dark justify-content-xs-center">Our Facility</h1>
+                <p>Here at Dynamo Fitness you will find a fully loaded private gym capable of of handling your every need. From dumbbells to benches, racks to rowers, we can create whatever workout that is right for you. Mirrors surround the gym to help improve your form and showcase your hard work, music is always playing and your personalized and custom workouts will always be up on the board when you arrive. 
+                    </p>
+            </div>
+
+            <div class="col-md-5">
+                <img src="/gym-wide.jpg" class="img-fluid" />
+            </div>
+
+        </div>
+
+        <div id="rates" class="anchor">
+            <div class="row  mt-5 justify-content-center">
+                <div class="col-md-9 text-center">
+                    <h1 class="display-4 fancy dark">Our Rates</h1>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md col-xs-12 mt-1">
+                    <div class="card fancy">
+                        <div class="card-header">
+                            <h6 class="card-subtitle mb-2 text-muted">Single Session</h6>
+                            <h1 class="fancy">$45</h1>
+                            <h6 class="card-subtitle text-muted">per session</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="#contact" class="btn btn-primary">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md col-xs-12 mt-1">
+                    <div class="card fancy">
+                        <div class="card-header">
+                            <h6 class="card-subtitle mb-2 text-muted">2 Sessions / week</h6>
+                            <h1 class="fancy">$175</h1>
+                            <h6 class="card-subtitle text-muted">per month</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="#contact" class="btn btn-primary">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md col-xs-12 mt-1">
+                    <div class="card fancy">
+                        <div class="card-header">
+                            <h6 class="card-subtitle mb-2 text-muted">3 Sessions / week</h6>
+                            <h1 class="fancy">$225</h1>
+                            <h6 class="card-subtitle text-muted">per month</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="#contact" class="btn btn-primary">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md col-xs-12 mt-1">
+                    <div class="card fancy">
+                        <div class="card-header">
+                            <h6 class="card-subtitle mb-2 text-muted">4 Sessions / week</h6>
+                            <h1 class="fancy">$260 </h1>
+                            <h6 class="card-subtitle text-muted">per month</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="#contact" class="btn btn-primary">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+
+        <div id="reviews" class="anchor">
+                <div class="row  mt-5 justify-content-center">
+                        <div class="col-md-9 text-center">
+                            <h1 class="display-4 fancy dark">Reviews</h1>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-12">
+                            <script type="text/javascript"> 
+                                var review_token = '4uL9zarI3I7WulGS3n6lUvaHBNxUA0MNcb7ViMAntWUz7BpCwU'; 
+                                var review_target = 'review-container'; 
+                                </script> 
+                                <script src="https://reviewsonmywebsite.com/js/embed.js?v=6" type="text/javascript"></script> 
+                                <div id="review-container"></div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="contact" class="anchor">
+            
+
+            <div class="row justify-content-between">
+
+                
+                    <div class="col-md-5">
+                            <h4 class="fancy dark">Contact Us</h4>
+                        <form id="contactform">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Your Phone</label>
+                                <input type="tel" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+    
+                            <div class="form-group email-confirm">
+                                    <label for="emailconfirm">Email address confirm</label>
+                                    <input type="emailconfirm" class="form-control" id="emailconfirm" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+    
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" rows="5" id="message" required>
+    
+                                </textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                        </form>
+                        <div class="alert alert-primary" id="form-response-success" role="alert">
+                            Message received!
+                        </div>
+    
+                        <div class="alert alert-danger" id="form-response-error" role="alert">
+                            There was an error, please try again.
+                        </div>
+    
+                    </div>
+
+                <div class="col-md-5">
+                        <h4 class="fancy dark">Like Us on Facebook!</h4>
+                        <div class="fb-page" data-href="https://www.facebook.com/dynamofitnesstx/" data-tabs="timeline" data-small-header="false"
+                        data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="500">
+                        <blockquote cite="https://www.facebook.com/dynamofitnesstx/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/dynamofitnesstx/">Dynamo Fitness</a>
+                        </blockquote>
+                    </div>
+                    
+                </div>
+
+                
+
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <footer class="bg-dark text-center mt-5">
+        Copyright &copy;2018 Dynamo Fitness LLC.
+    </footer>
+</body>
+
+</html>
