@@ -39,13 +39,13 @@
                 $.ajax({
                     type: "POST",
                     url: 'https://contact.dynamofitnesstx.com/submit',
-                    contentType: 'application/json',
-                    data: JSON.stringify({
+                    contentType: 'application/x-www-form-urlencoded',
+                    data: {
                         'name': name,
                         'email': email,
                         'message': message,
                         'phone': phone,
-                    }),
+                    },
                     success: function (res) {
                         $('#contactform').hide();
                         $('#form-response-success').show();
