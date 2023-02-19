@@ -1,0 +1,12 @@
+- name: Single Session
+  price: $65
+  uom: session
+- name: 2 Sessions / week
+  price: $195
+  uom: month
+- name: 3 Sessions / week
+  price: $245
+  uom: month
+- name: 4 Sessions /week
+  price: $285
+  uom: month
