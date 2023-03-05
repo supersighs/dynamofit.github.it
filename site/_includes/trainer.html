@@ -1,6 +1,6 @@
 <div class="row mt-5 anchor justify-content-sm-center" id="trainer">
             <div class="col-md-3">
-                <img src="/assets/img/keri.jpg" class="rounded-circle img-fluid" />
+                <img src="/assets/img/02862824-B157-49E7-98FC-0DE2BB67E5ED.jpeg" class="rounded-circle img-fluid" />
             </div>
             <div class="col-md-8 offset-md-1 col-sm-12">
                 <h1 class="display-4 fancy dark">Meet your trainer</h1>
@@ -9,8 +9,13 @@
                     I had always loved to workout, loved the feeling of bettering myself. I also fell in love with weight
                     lifting. As I pursued my love for lifting, it became very clear that most women didn&rsquo;t know the
                     benefits of lifting, were intimidated by it and the gym setting as well. It became my mission to teach
-                    both men, women and kids how to properly and safely lift weights. I now have a fully loaded garage gym,
-                    I am a certified Personal Trainer and I LOVE the time spent in my gym with my clients of all levels and
-                    ages. </p>
+                    both men, women and kids how to properly and safely lift weights. </p>
+                <p>Obstacle Course Races (OCR&rsquo;s) are a big part of my favorite outdoor activities. I train and accompany various teams of ALL skill levels (beginners included) to OCR's all over Texas and the U.S.! Train hard, play hard! </p>
+                <h2>Credentials</h2>
+            <ul class="certifications">
+			{% for item in site.data.certifications %}
+			<li class="certification"> {{ item.organization }} {{ item.name }} </li>
+			{% endfor %}
+                    </ul> 
             </div>
         </div>
