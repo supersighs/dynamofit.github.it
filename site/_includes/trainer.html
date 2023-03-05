@@ -12,5 +12,10 @@
                     both men, women and kids how to properly and safely lift weights. I now have a fully loaded garage gym,
                     I am a certified Personal Trainer and I LOVE the time spent in my gym with my clients of all levels and
                     ages. </p>
+            <ul class="certifications">
+			{% for item in site.data.certifications %}
+			<li class="certification> {{ item.organization }} {{ item.name }} </li>
+			{% endfor %}
+                    </ul> 
             </div>
         </div>
