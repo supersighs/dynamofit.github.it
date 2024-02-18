@@ -1,4 +1,4 @@
 *.zip
 .jekyll-*
 _site
-Gemfile.lock
+public
